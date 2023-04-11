@@ -98,6 +98,11 @@
   (setq lsp-ui-flycheck-enable nil)
   (treemacs-resize-icons 14))
 
+
+(use-package ccls
+  :hook ((c-mode c++-mode objc-mode cuda-mode) .
+         (lambda () (require 'ccls) (lsp))))
+
 ;; 如果你使用的是helm插件 if you are helm user
 ;; (use-package helm-lsp :commands helm-lsp-workspace-symbol)
 
